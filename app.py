@@ -30,3 +30,15 @@ if uploaded_file is not None:
 
 st.sidebar.title("History")
 st.sidebar.info("Uploaded cases history will be displayed here.")
+
+
+import gdown
+import os
+
+file_id = "19xEmlzNGU8UDXfBKXkICj3_bhwvIDtFm"
+
+model_path = "plant_disease_model.h5"
+
+if not os.path.exists(model_path):
+    url = f"https://drive.google.com/uc?id={file_id}"
+    gdown.download(url, model_path, quiet=False)
